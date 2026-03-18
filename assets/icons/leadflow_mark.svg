@@ -1,0 +1,17 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="leadflowBlue" x1="28" y1="24" x2="210" y2="214" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9EDAF4"/>
+      <stop offset="0.45" stop-color="#4DB7EA"/>
+      <stop offset="1" stop-color="#0D325F"/>
+    </linearGradient>
+  </defs>
+  <path d="M127.7 22C78.8 22 39 61.8 39 110.7c0 18.1 5.4 35.1 14.8 49.2L118.4 234c2.8 3.3 8.2 3.3 11 0l64.6-74.1c9.4-14.1 14.8-31.1 14.8-49.2C208.8 61.8 169 22 120.1 22h7.6z" fill="url(#leadflowBlue)"/>
+  <circle cx="132" cy="72" r="18" fill="#9EDAF4"/>
+  <path d="M67 80c0-34 28-61 62-61" stroke="#C9EEFF" stroke-width="9" stroke-linecap="round" opacity="0.7"/>
+  <path d="M57 107c0-42 34-76 76-76" stroke="#8FD5F4" stroke-width="8" stroke-linecap="round" opacity="0.72"/>
+  <path d="M61 137c3-33 30-58 63-58" stroke="#7CCBEF" stroke-width="8" stroke-linecap="round" opacity="0.82"/>
+  <path d="M74 165c7-26 29-45 56-45" stroke="#62BEE8" stroke-width="8" stroke-linecap="round" opacity="0.88"/>
+  <path d="M92 188c8-18 24-30 43-30" stroke="#4BACE0" stroke-width="8" stroke-linecap="round" opacity="0.95"/>
+  <path d="M108 207c6-10 14-16 24-18" stroke="#2E8DC8" stroke-width="8" stroke-linecap="round"/>
+</svg>
