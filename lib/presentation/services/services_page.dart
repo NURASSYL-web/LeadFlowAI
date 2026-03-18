@@ -347,7 +347,6 @@ class _ServiceCard extends StatelessWidget {
               title: const Text('Показывать клиентам'),
               subtitle: const Text(
                   'Услуга будет участвовать в автоответах и каталоге'),
-              activeThumbColor: AppColors.primary,
             ),
           ],
         ),
@@ -628,7 +627,7 @@ class _ServiceFormSheetState extends State<_ServiceFormSheet> {
               ),
               const SizedBox(height: 12),
               DropdownButtonFormField<String>(
-                initialValue: _category,
+                value: _category,
                 decoration: const InputDecoration(labelText: 'Категория'),
                 items: AppConstants.serviceCategories
                     .map((category) => DropdownMenuItem<String>(
