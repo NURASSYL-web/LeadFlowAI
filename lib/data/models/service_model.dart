@@ -89,8 +89,14 @@ class ServiceModel {
         .toList();
   }
 
-  factory ServiceModel.fromMap(Map<String, dynamic> map) => ServiceModel(
-        serviceId: _stringValue(map['serviceId']),
+  factory ServiceModel.fromMap(
+    Map<String, dynamic> map, {
+    String? documentId,
+  }) =>
+      ServiceModel(
+        serviceId: _stringValue(map['serviceId']).trim().isNotEmpty
+            ? _stringValue(map['serviceId']).trim()
+            : (documentId ?? ''),
         salonId: _stringValue(map['salonId']),
         name: _stringValue(map['name']).trim().isEmpty
             ? 'Без названия'

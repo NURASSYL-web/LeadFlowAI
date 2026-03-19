@@ -12,8 +12,9 @@ class ServiceRepository {
         .where('salonId', isEqualTo: salonId)
         .orderBy('createdAt', descending: false)
         .snapshots()
-        .map((snap) =>
-            snap.docs.map((d) => ServiceModel.fromMap(d.data())).toList());
+        .map((snap) => snap.docs
+            .map((d) => ServiceModel.fromMap(d.data(), documentId: d.id))
+            .toList());
   }
 
   Future<List<ServiceModel>> getServices(String salonId) async {
@@ -21,7 +22,9 @@ class ServiceRepository {
         .collection('services')
         .where('salonId', isEqualTo: salonId)
         .get();
-    return snap.docs.map((d) => ServiceModel.fromMap(d.data())).toList();
+    return snap.docs
+        .map((d) => ServiceModel.fromMap(d.data(), documentId: d.id))
+        .toList();
   }
 
   Future<ServiceModel> createService(ServiceModel service) async {
