@@ -12,13 +12,20 @@ class AuthProvider extends ChangeNotifier {
   AuthStatus _status = AuthStatus.loading;
   UserModel? _user;
   String? _error;
+  Future<void>? _initialization;
 
   AuthStatus get status => _status;
   UserModel? get user => _user;
   String? get error => _error;
+  Future<void> get initialization => _initialization ?? Future.value();
 
   AuthProvider() {
-    unawaited(_repo.ensureSessionPersistence());
+    _initialization = _initialize();
+  }
+
+  Future<void> _initialize() async {
+    await _repo.ensureSessionPersistence();
+    await _onAuthChanged(_repo.currentUser);
     _repo.authStateChanges.listen(_onAuthChanged);
   }
 
