@@ -92,7 +92,6 @@ class _InquiryDetailPageState extends State<InquiryDetailPage> {
     }
 
     setState(() => _generating = true);
-    final inquiryProvider = context.read<InquiryProvider>();
     try {
       final reply = _localReplyService.buildReply(
         latestMessage: latestMessage,

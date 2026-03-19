@@ -626,7 +626,9 @@ class _ServiceFormSheetState extends State<_ServiceFormSheet> {
                 ],
               ),
               const SizedBox(height: 12),
+              // Keep `value` here for compatibility with the CI Flutter SDK.
               DropdownButtonFormField<String>(
+                // ignore: deprecated_member_use
                 value: _category,
                 decoration: const InputDecoration(labelText: 'Категория'),
                 items: AppConstants.serviceCategories
