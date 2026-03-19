@@ -22,8 +22,14 @@ class SalonModel {
       this.workingHours,
       this.city,
       required this.createdAt});
-  factory SalonModel.fromMap(Map<String, dynamic> map) => SalonModel(
-        salonId: map['salonId'] ?? '',
+  factory SalonModel.fromMap(
+    Map<String, dynamic> map, {
+    String? documentId,
+  }) =>
+      SalonModel(
+        salonId: (map['salonId'] ?? '').toString().trim().isNotEmpty
+            ? (map['salonId'] ?? '').toString().trim()
+            : (documentId ?? ''),
         ownerUid: map['ownerUid'] ?? '',
         businessName: map['businessName'] ?? '',
         businessType: map['businessType'] ?? '',
