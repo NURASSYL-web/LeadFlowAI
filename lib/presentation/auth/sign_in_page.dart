@@ -6,7 +6,6 @@ import '../../providers/inquiry_provider.dart';
 import '../../providers/whatsapp_connection_provider.dart';
 import '../../core/theme/app_theme.dart';
 import '../dashboard/dashboard_page.dart';
-import '../salon/salon_setup_page.dart';
 import 'sign_up_page.dart';
 
 class SignInPage extends StatefulWidget {
@@ -70,12 +69,9 @@ class _SignInPageState extends State<SignInPage> {
             ownerUid: salon.salon!.ownerUid,
           );
       context.read<WhatsAppConnectionProvider>().syncFromSalon(salon.salon);
-      Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (_) => const DashboardPage()));
-    } else {
-      Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (_) => const SalonSetupPage(isOnboarding: true)));
     }
+    Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (_) => const DashboardPage()));
   }
 
   void _showError(String msg) {

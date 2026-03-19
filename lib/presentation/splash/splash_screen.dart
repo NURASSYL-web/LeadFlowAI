@@ -7,7 +7,6 @@ import '../../providers/inquiry_provider.dart';
 import '../../providers/whatsapp_connection_provider.dart';
 import '../auth/sign_in_page.dart';
 import '../dashboard/dashboard_page.dart';
-import '../salon/salon_setup_page.dart';
 import '../../core/theme/app_theme.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -60,21 +59,18 @@ class _SplashScreenState extends State<SplashScreen>
                 salonId: salonProvider.salon!.salonId,
                 ownerUid: salonProvider.salon!.ownerUid,
               );
-          context
-              .read<WhatsAppConnectionProvider>()
-              .syncFromSalon(salonProvider.salon)
-              .whenComplete(() {
-            if (!mounted) {
-              return;
-            }
-            Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (_) => const DashboardPage()),
-            );
-          });
-        } else {
-          Navigator.of(context).pushReplacement(MaterialPageRoute(
-              builder: (_) => const SalonSetupPage(isOnboarding: true)));
         }
+        context
+            .read<WhatsAppConnectionProvider>()
+            .syncFromSalon(salonProvider.salon)
+            .whenComplete(() {
+          if (!mounted) {
+            return;
+          }
+          Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (_) => const DashboardPage()),
+          );
+        });
       });
     } else {
       Navigator.of(context).pushReplacement(

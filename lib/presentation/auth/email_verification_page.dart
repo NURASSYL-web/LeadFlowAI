@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../core/theme/app_theme.dart';
-import '../salon/salon_setup_page.dart';
+import '../dashboard/dashboard_page.dart';
 
 class EmailVerificationPage extends StatelessWidget {
   final String email;
@@ -39,11 +39,10 @@ class EmailVerificationPage extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () => Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(
-                        builder: (_) =>
-                            const SalonSetupPage(isOnboarding: true)),
+                        builder: (_) => const DashboardPage()),
                     (route) => false,
                   ),
-                  child: const Text('Continue to Setup'),
+                  child: const Text('Continue'),
                 ),
               ),
               const SizedBox(height: 12),
