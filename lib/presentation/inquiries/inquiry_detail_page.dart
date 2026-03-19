@@ -103,13 +103,6 @@ class _InquiryDetailPageState extends State<InquiryDetailPage> {
       if (!mounted) {
         return;
       }
-      await inquiryProvider.updateSuggestedReply(
-        widget.inquiry.inquiryId,
-        reply,
-      );
-      if (!mounted) {
-        return;
-      }
       setState(() => _suggestedReply = reply);
     } catch (error) {
       if (!mounted) {
